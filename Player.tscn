@@ -8,10 +8,12 @@ radius = 0.5
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 5 )
+
+[node name="BodyHinge" type="Spatial" parent="."]
+
+[node name="bodyMesh" type="MeshInstance" parent="BodyHinge"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
