@@ -27,6 +27,8 @@ size = Vector3( 8, 1.2, 50 )
 [node name="Grass" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25 )
 mesh = SubResource( 2 )
+material/0 = null
 
 [node name="Sand" type="MeshInstance" parent="Grass"]
 mesh = SubResource( 6 )
+material/0 = null

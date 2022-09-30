@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RoadStart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Spatial"]
+
+[node name="RoadStart" parent="." instance=ExtResource( 1 )]
+
+[node name="RoadStart2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.766045, 0.492404, 0.413176, -5.61943e-08, -0.642788, 0.766044, 0.642787, -0.586824, -0.492404, -4.92625, 1.73395, 0 )
+light_color = Color( 0.992157, 0.984314, 0.827451, 1 )
+shadow_enabled = true
