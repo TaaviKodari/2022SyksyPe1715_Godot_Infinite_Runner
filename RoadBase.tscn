@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.12549, 0.333333, 0.141176, 1 )
@@ -22,13 +22,28 @@ uv1_scale = Vector3( 8, 50, 1 )
 material = SubResource( 5 )
 size = Vector3( 8, 1.2, 50 )
 
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1, 2.5, 25 )
+
 [node name="RoadBase" type="Spatial"]
 
 [node name="Grass" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Sand" type="MeshInstance" parent="Grass"]
 mesh = SubResource( 6 )
-material/0 = null
+
+[node name="Colliders" type="Spatial" parent="Grass/Sand"]
+
+[node name="GuardRailRight" type="StaticBody" parent="Grass/Sand/Colliders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/Colliders/GuardRailRight"]
+shape = SubResource( 7 )
+
+[node name="GuardRailLeft" type="StaticBody" parent="Grass/Sand/Colliders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/Colliders/GuardRailLeft"]
+shape = SubResource( 7 )
