@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.12549, 0.333333, 0.141176, 1 )
@@ -25,6 +25,9 @@ size = Vector3( 8, 1.2, 50 )
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 1, 2.5, 25 )
 
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -4, 0.6, 25, 4, 0.6, 25, -4, -0.6, 25, 4, 0.6, 25, 4, -0.6, 25, -4, -0.6, 25, 4, 0.6, -25, -4, 0.6, -25, 4, -0.6, -25, -4, 0.6, -25, -4, -0.6, -25, 4, -0.6, -25, 4, 0.6, 25, 4, 0.6, -25, 4, -0.6, 25, 4, 0.6, -25, 4, -0.6, -25, 4, -0.6, 25, -4, 0.6, -25, -4, 0.6, 25, -4, -0.6, -25, -4, 0.6, 25, -4, -0.6, 25, -4, -0.6, -25, 4, 0.6, 25, -4, 0.6, 25, 4, 0.6, -25, -4, 0.6, 25, -4, 0.6, -25, 4, 0.6, -25, -4, -0.6, 25, 4, -0.6, 25, -4, -0.6, -25, 4, -0.6, 25, 4, -0.6, -25, -4, -0.6, -25 )
+
 [node name="RoadBase" type="Spatial"]
 
 [node name="Grass" type="MeshInstance" parent="."]
@@ -47,3 +50,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/Colliders/GuardRailLeft"]
 shape = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Grass/Sand"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/StaticBody"]
+shape = SubResource( 8 )
