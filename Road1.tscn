@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RoadBase.tscn" type="PackedScene" id=2]
+
+[node name="RoadBase" instance=ExtResource( 2 )]
+
+[node name="Obstacles" type="Spatial" parent="." index="1"]
+
+[node name="Wall" parent="Obstacles" index="0" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38233, 0.615386, -14.7474 )
+
+[node name="Wall2" parent="Obstacles" index="1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99886, 0.615386, -22.3115 )
+
+[node name="Wall3" parent="Obstacles" index="2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0439, 0.615386, -31.593 )
+
+[node name="Wall4" parent="Obstacles" index="3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00491905, 0.615386, -37.9867 )
+
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140414, 0.615386, -49.6652 )
+
+[node name="Wall7" parent="Obstacles" index="5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73453, 0.615386, -49.6652 )
+
+[node name="Wall6" parent="Obstacles" index="6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60352, 0.615386, -49.6652 )

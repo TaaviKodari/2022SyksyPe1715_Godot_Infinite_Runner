@@ -33,11 +33,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		sideways -= 1.0
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
 	
 	velocity.y -= gravity * delta
 	velocity.x = sideways * sidestep_speed
 	velocity.z = -run_speed
 	
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector3.UP)
