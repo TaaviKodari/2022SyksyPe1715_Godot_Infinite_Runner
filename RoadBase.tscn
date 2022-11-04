@@ -41,17 +41,20 @@ mesh = SubResource( 6 )
 
 [node name="GuardRailRight" type="StaticBody" parent="Grass/Sand/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0 )
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/Colliders/GuardRailRight"]
 shape = SubResource( 7 )
 
 [node name="GuardRailLeft" type="StaticBody" parent="Grass/Sand/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0 )
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/Colliders/GuardRailLeft"]
 shape = SubResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="Grass/Sand"]
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/Sand/StaticBody"]
 shape = SubResource( 8 )

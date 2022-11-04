@@ -41,3 +41,10 @@ func _physics_process(delta):
 	velocity.z = -run_speed
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+	for index in range(get_slide_count()):
+		var collision = get_slide_collision(index)
+		var collision_object = collision.collider as CollisionObject
+		if collision_object.collision_layer & 4:
+			#print("Ouch!")
+			get_tree().reload_current_scene()
