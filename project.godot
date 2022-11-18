@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "RoadBase",
+"language": "GDScript",
+"path": "res://RoadBase.gd"
+} ]
+_global_script_class_icons={
+"RoadBase": ""
+}
+
 [application]
 
 config/name="2022 Syksy Pe 1715  Infinite Runner"
