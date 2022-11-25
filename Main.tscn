@@ -5,6 +5,7 @@
 [ext_resource path="res://Main.gd" type="Script" id=3]
 
 [node name="Main" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="RoadStart" parent="." instance=ExtResource( 1 )]
@@ -24,3 +25,4 @@ shadow_enabled = true
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
 transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 5 )
+far = 300.0
