@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://RoadStart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://UI/StartScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/GameOverScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/PauseScreen.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Spatial"]
+pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0 )
 script = ExtResource( 3 )
 
@@ -15,6 +18,7 @@ script = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548224, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -31,3 +35,15 @@ far = 300.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="StartScreen" parent="CanvasLayer" instance=ExtResource( 4 )]
+pause_mode = 2
+
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource( 5 )]
+pause_mode = 2
+visible = false
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+
+[connection signal="obstacle_hit" from="Player" to="." method="_on_Player_obstacle_hit"]
+[connection signal="dismissed" from="CanvasLayer/StartScreen" to="." method="_on_StartScreen_dismissed"]
+[connection signal="dismissed" from="CanvasLayer/GameOverScreen" to="." method="_on_GameOverScreen_dismissed"]
